@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'calculotor.dart';
 
 void main(List<String> args) {
@@ -11,7 +12,7 @@ class Calculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CalculotorAPP(),
+      home: CalculatorAPP(),
       debugShowCheckedModeBanner: false,
     );
   }
