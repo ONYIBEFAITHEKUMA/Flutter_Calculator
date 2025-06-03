@@ -31,7 +31,7 @@ class _CalculatorState extends State<CalculatorAPP> {
     });
   }
 
-  Widget buildButton(String value, {Color color = Colors.blue}) {
+  Widget buildButton(String value, {Color color = Colors.white}) {
     return SizedBox(
       width: 70,
       height: 70,
@@ -39,10 +39,12 @@ class _CalculatorState extends State<CalculatorAPP> {
         onPressed: () => buttonPressed(value),
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
         ),
-        child: Text(value, style: const TextStyle(fontSize: 24)),
+        child: Text(value, style: const TextStyle(fontSize: 24, color: Colors.white)),
+        
       ),
+      
     );
   }
 
@@ -50,20 +52,29 @@ class _CalculatorState extends State<CalculatorAPP> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Calculator')),
+      backgroundColor: Colors.black,
+      
       body: Column(
+        
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        
         children: [
-          Text(input, style: const TextStyle(fontSize: 32)),
-          Text(result, style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+          
+          Text(input, style: const TextStyle(fontSize: 32 ,)),
+          Text(result, style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold, )),
+          
           Wrap(
+            
             spacing: 10,
             runSpacing: 10,
+            
             children: [
+              
               ...['7', '8', '9', '/',
                   '4', '5', '6', '*',
                   '1', '2', '3', '-',
                   '0', '.', '=', '+',
-                  'C'].map((e) => buildButton(e, color: _isOperator(e) ? Colors.orange : Colors.blue))
+                  'C'].map((e) => buildButton(e, color: _isOperator(e) ? Colors.orange : const Color.fromARGB(255, 23, 26, 27)))
             ],
           ),
         ],
